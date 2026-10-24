@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+.container-principal {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+
+.lista {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 20px;
+    min-height: 72px;
+    margin: 0;
+    padding: 0;
+}
+
+.titulo-nav {
+    margin-right: auto;
+}
+
+body {
+    margin: 0;
+    background-color: #0F1117;
+    font-family: 'Chakra Petch', Arial, sans-serif;
+}
+
+.item-lista {
+    color: #9AA3B5;
+    font-size: 16px;
+}
+
+.titulo-nav {
+    color: #edeff4;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+}
+
+.botao-login {
+    border: 1px solid #2A2F3C;
+    border-radius: 8px;
+    color: #EDEFF4;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #0F1117;
+    padding: 8px 20px;
+}
