@@ -53,3 +53,54 @@ a {
     background-color: #0F1117;
     padding: 8px 20px;
 }
+
+.titulo {
+    margin-top: 30px;
+    font-size: 56px;
+    font-weight: bold;
+    color: #EDEFF4;
+}
+
+.p1-introducao {
+    font-size: 13px;
+    color: #FF4655;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}
+
+.p2-introducao {
+    font-size: 18px;
+    color: #9AA3B5;
+    margin-bottom: 35px;
+}
+
+.botao-vermelho {
+    background-color: #FF4655;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 26px;
+}
+
+.section-introducao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    margin-top: 70px;
+}
+
+.conteudo-lado-esquerdo {
+    flex: 1;
+}
+
+.conteudo-lado-direito {
+    flex: 1;
+}
+
+.img-mira {
+    display: block;
+    height: auto;
+    width: 100%;
+}
