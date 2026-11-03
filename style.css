@@ -109,6 +109,8 @@ a {
 .section-timeline{
     display: flex;
     flex-direction: column;
+    padding-top: 24px;
+    padding-bottom: 62px;
 }
 
 .p-timeline {
@@ -166,3 +168,163 @@ a {
     font-size: 16px;
     font-weight: bold;
 }
+
+.section-estatisticas {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    padding-bottom: 62px;
+}
+
+.card-estatisticas {
+    margin-top: 30px;
+    border-radius: 12px;
+    border: 1px solid #2A2F3C;;
+    justify-content: space-around;
+    background-color: #1b1f27;
+    display: flex;
+    width: 100%;
+}
+
+.item-estatistica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;      
+}
+
+.numero-estatistica {
+    font-size: 32px;
+    color: #EDEFF4;
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.p-estatistica {
+    color: #9AA3B5;
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 35px;
+}
+
+.container-destaques {
+    margin-top: 30px;
+    display: flex;
+    gap: 46px;
+}
+
+.card-destaque {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    background-color: #1b1f27;
+    border: 1px solid #2A2F3C;
+    border-radius: 12px;
+    padding: 32px;
+    width: 100%;
+}
+
+.nome-agente {
+    margin-top: 0px;
+    font-size: 40px;
+    color: #f1622e;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.nome-mapa {
+    margin-top: 0px;
+    font-size: 40px;
+    color: #C9A06B;
+    font-weight: bold;
+}
+
+.img-agente {
+    max-width: 200px;
+    height: auto;
+}
+
+.img-mapa {
+    max-width: 350px;
+    height: auto;
+}
+
+.p-estatistica-inferior {
+    color: #9AA3B5;
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 0px;
+}
+
+.descricao-agente {
+    color: #EDEFF4;
+}
+
+.section-como-funciona {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    padding-bottom: 62px;
+}
+
+.p-como-funciona {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FF4655;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.h2-como-funciona {
+    font-size: 32px;
+    font-weight: bold;
+    color: #EDEFF4;
+    margin-bottom: 32px;
+}
+
+.p-descricao-como-funciona {
+    color: #9AA3B5;
+    margin-bottom: 32px;
+}
+
+.container-cards-como-funciona {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;     
+}
+
+.parte-superior {
+    display: flex;
+    gap: 24px; 
+}
+
+.parte-inferior {
+    display: flex;
+    gap: 24px;              
+}
+
+.card-como-funciona {
+    flex: 1;           
+    background-color: #1b1f27;
+    border: 1px solid #2A2F3C;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+
+.parte-inferior {
+    width: 50%;
+}
+
+.h3-como-funciona {
+    font-size: 20px;
+    color: #EDEFF4;
+    margin-bottom: 8px;
+}
+
+.texto-como-funciona {
+    color: #9AA3B5;
+    margin: 0;
+}
+
+
