@@ -80,6 +80,7 @@ a {
     font-size: 16px;
     font-weight: bold;
     padding: 14px 26px;
+    font-family: inherit;
 }
 
 .section-introducao {
@@ -327,4 +328,355 @@ a {
     margin: 0;
 }
 
+.section-dashboard {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding-top: 24px;
+    padding-bottom: 62px;
+}
 
+.p-dashboard {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FF4655;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.h2-dashboard {
+    margin-top: 0px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #EDEFF4;
+    margin-bottom: 15px;
+}
+
+.p-descricao-dashboard {
+    font-size: 18px;
+    color: #9AA3B5;
+    margin-top: 0px;
+    margin-bottom: 32px;
+}
+
+.botao-dashboard {
+    border: 1px solid #2A2F3C;
+    border-radius: 8px;
+    color: #EDEFF4;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #0F1117;
+    padding: 14px 26px;
+    font-family: inherit;
+}
+
+.card-grafico {
+    flex: 1;
+    background-color: #1b1f27;
+    border: 1px solid #2A2F3C;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.titulo-grafico {
+    margin-top: 0px;
+    margin-bottom: 24px;
+    color: #EDEFF4;
+    font-weight: bold;
+}
+
+.exemplo-grafico {
+    color: #9AA3B5;
+    font-weight: normal;
+}
+
+.grafico {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+
+}
+
+.item-grafico {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.barra {
+    width: 100%;
+    max-width: 56px;
+    background-color: #FF4655;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.legenda-barra {
+    margin-top: 8px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    color: #9AA3B5;
+}
+
+.section-valores {
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    padding-bottom: 62px;
+}
+
+.p-valores {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #9AA3B5;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.h2-valores {
+    margin-top: 0px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #EDEFF4;
+    margin-bottom: 32px;
+}
+
+.container-cards-valores {
+    display: flex;
+    gap: 24px;
+}
+
+.card-valores {
+    flex: 1;
+    background-color: #1b1f27;
+    border: 1px solid #2A2F3C;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.numero-valor {
+    margin-top: 0px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FF4655;
+    letter-spacing: 0.1em;
+}
+
+.h3-valores {
+    margin-top: 0px;
+    margin-bottom: 8px;
+    font-size: 20px;
+    color: #EDEFF4;
+}
+
+.texto-valores {
+    margin: 0px;
+    color: #9AA3B5;
+}
+
+
+.footer {
+    background-color: #12151D;
+    border-top: 1px solid #2A2F3C;
+    margin-top: 40px;
+    padding-top: 36px;
+    padding-bottom: 24px;
+}
+
+.conteudo-footer {
+    display: flex;
+    gap: 64px;
+    padding-bottom: 48px;
+}
+
+.coluna-footer {
+    flex: 1;
+}
+
+.coluna-marca {
+    flex: 2;
+}
+
+.titulo-footer {
+    margin-top: 0px;
+    margin-bottom: 12px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #EDEFF4;
+}
+
+.descricao-footer {
+    margin: 0px;
+    max-width: 420px;
+    color: #9AA3B5;
+    line-height: 1.6;
+}
+
+.titulo-coluna-footer {
+    margin-top: 0px;
+    margin-bottom: 16px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #EDEFF4;
+    letter-spacing: 0.1em;
+}
+
+.lista-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.barra-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 24px;
+    border-top: 1px solid #2A2F3C;
+}
+
+.texto-footer {
+    margin: 0px;
+    font-size: 14px;
+    color: #9AA3B5;
+}
+
+.section-formulario {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding-top: 72px;
+    padding-bottom: 72px;
+    min-height: 700px;
+}
+
+.painel-formulario {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+    min-height: 520px;
+    background-color: #12151D;
+    border: 1px solid #2A2F3C;
+    border-radius: 12px;
+    padding: 32px;
+}
+
+.img-painel {
+    width: 160px;
+    height: auto;
+}
+
+.h2-painel {
+    margin: 8px 0px 0px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #EDEFF4;
+}
+
+.p-painel {
+    margin: 0px;
+    max-width: 340px;
+    font-size: 18px;
+    color: #9AA3B5;
+}
+
+.conteudo-formulario {
+    flex: 1;
+}
+
+.card-formulario {
+    background-color: #1b1f27;
+    border: 1px solid #2A2F3C;
+    border-radius: 12px;
+    padding: 32px;
+}
+
+.p-formulario {
+    margin-top: 0px;
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #FF4655;
+    letter-spacing: 0.1em;
+}
+
+.h1-formulario {
+    margin-top: 0px;
+    margin-bottom: 8px;
+    font-size: 36px;
+    font-weight: bold;
+    color: #EDEFF4;
+}
+
+.p-descricao-formulario {
+    margin-top: 0px;
+    margin-bottom: 28px;
+    color: #9AA3B5;
+}
+
+.campo-formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.label-formulario {
+    font-size: 14px;
+    font-weight: bold;
+    color: #EDEFF4;
+}
+
+.input-formulario {
+    width: 100%;
+    font-family: inherit;
+    font-size: 16px;
+    color: #EDEFF4;
+    background-color: #0F1117;
+    border: 1px solid #2A2F3C;
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+.linha-esqueci {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+}
+
+.link-formulario {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FF4655;
+}
+
+.botao-formulario {
+    width: 100%;
+    background-color: #FF4655;
+    border: none;
+    border-radius: 8px;
+    color: #0F1117;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 14px 26px;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+.p-rodape-formulario {
+    margin-top: 24px;
+    margin-bottom: 0px;
+    text-align: center;
+    color: #9AA3B5;
+}
