@@ -1,0 +1,152 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;700&display=swap">
+    <title>Dashboard - FPS Minha História</title>
+</head>
+<body class="pagina-dashboard">
+    <header>
+        <div class="container-principal">
+            <nav class="nav-inicio" aria-label="Navegação principal">
+                <ul class="lista">
+                    <li class="titulo-nav"><a href="index.html">FPS <b>/</b> MINHA HISTÓRIA</a></li>
+                    <li><a href="index.html" class="item-lista">Início</a></li>
+                    <li><a href="minha-historia.html" class="item-lista">Minha história</a></li>
+                    <li><a href="index.html#jogos" class="item-lista">Jogos</a></li>
+                    <li><a href="dashboard.html" class="item-lista item-ativo" aria-current="page">Dashboard</a></li>
+                    <li><a href="#" class="item-lista">Documentação</a></li>
+                    <li class="usuario-dashboard"><span class="avatar-usuario" aria-hidden="true">LO</span><span>Luis Otávio<small>Conta de exemplo</small></span></li>
+                    <li><a href="login.html" class="botao-login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-painel">
+            <div class="container-principal">
+                <div class="topo-dashboard">
+                    <div>
+                        <h1>Seu desempenho no <span class="texto-vermelho">Valorant</span></h1>
+                        <p class="descricao-dashboard">Estatísticas das partidas registradas na sua conta. Dados de exemplo.</p>
+                    </div>
+                </div>
+
+                <div class="resumo-dashboard">
+                    <div class="card-resumo"><p class="rotulo-dashboard">PARTIDAS JOGADAS</p><p class="numero-dashboard">128</p></div>
+                    <div class="card-resumo"><p class="rotulo-dashboard">WIN RATE GERAL</p><p class="numero-dashboard texto-verde">55,5%</p></div>
+                    <div class="card-resumo"><p class="rotulo-dashboard">KDA MÉDIO</p><p class="numero-dashboard">1,34</p></div>
+                    <div class="card-resumo"><p class="rotulo-dashboard">AGENTE MAIS JOGADO</p><p class="numero-dashboard texto-vermelho">Jett</p></div>
+                </div>
+
+                <div class="graficos-dashboard">
+                    <div class="painel-dashboard painel-mapas">
+                        <h2>Win rate por mapa</h2>
+                        <p class="descricao-grafico">Linha tracejada marca 50%</p>
+                        <div class="rolagem-mapas" tabindex="0" aria-label="Win rate por mapa; role para ver todos os mapas em telas pequenas">
+                            <div class="grafico-mapas">
+                                <div class="linha-cinquenta" aria-hidden="true"></div>
+                                <div class="coluna-mapa">
+                                    <div class="area-barra-mapa"><div class="barra-mapa " style="height: 62%;"><strong>62%</strong></div></div>
+                                    <span class="nome-mapa-dashboard">Ascent</span>
+                                </div>
+                                <div class="coluna-mapa">
+                                    <div class="area-barra-mapa"><div class="barra-mapa barra-derrota" style="height: 48%;"><strong>48%</strong></div></div>
+                                    <span class="nome-mapa-dashboard">Bind</span>
+                                </div>
+                                <div class="coluna-mapa">
+                                    <div class="area-barra-mapa"><div class="barra-mapa " style="height: 58%;"><strong>58%</strong></div></div>
+                                    <span class="nome-mapa-dashboard">Haven</span>
+                                </div>
+                                <div class="coluna-mapa">
+                                    <div class="area-barra-mapa"><div class="barra-mapa barra-derrota" style="height: 44%;"><strong>44%</strong></div></div>
+                                    <span class="nome-mapa-dashboard">Split</span>
+                                </div>
+                                <div class="coluna-mapa">
+                                    <div class="area-barra-mapa"><div class="barra-mapa " style="height: 66%;"><strong>66%</strong></div></div>
+                                    <span class="nome-mapa-dashboard">Icebox</span>
+                                </div>
+                                <div class="coluna-mapa">
+                                    <div class="area-barra-mapa"><div class="barra-mapa " style="height: 52%;"><strong>52%</strong></div></div>
+                                    <span class="nome-mapa-dashboard">Lotus</span>
+                                </div>
+                                <div class="coluna-mapa">
+                                    <div class="area-barra-mapa"><div class="barra-mapa " style="height: 57%;"><strong>57%</strong></div></div>
+                                    <span class="nome-mapa-dashboard">Sunset</span>
+                                </div>
+                                <div class="coluna-mapa">
+                                    <div class="area-barra-mapa"><div class="barra-mapa " style="height: 50%;"><strong>50%</strong></div></div>
+                                    <span class="nome-mapa-dashboard">Abyss</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lateral-dashboard">
+                        <div class="painel-dashboard painel-resultados">
+                            <h2>Vitórias x derrotas</h2>
+                            <div class="conteudo-resultados">
+                                <div class="grafico-rosca" role="img" aria-label="71 vitórias e 57 derrotas: 55,5% de vitórias"><strong>55,5%</strong></div>
+                                <div class="legenda-resultados">
+                                    <p><span class="cor-legenda cor-vitoria"></span>71 vitórias</p>
+                                    <p><span class="cor-legenda cor-derrota"></span>57 derrotas</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="destaques-mapas">
+                            <div class="card-resumo"><p class="rotulo-dashboard">MELHOR MAPA</p><h3 class="texto-verde">Icebox</h3><p class="descricao-grafico">66% de vitórias</p></div>
+                            <div class="card-resumo"><p class="rotulo-dashboard">PIOR MAPA</p><h3 class="texto-vermelho">Split</h3><p class="descricao-grafico">44% de vitórias</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="painel-dashboard painel-agentes">
+                    <h2>Desempenho por agente</h2>
+                    <p class="descricao-grafico">Ordenado por win rate. Marcador branco indica 50%. KDA: (abates + assistências) / mortes.</p>
+                    <div class="rolagem-agentes" tabindex="0" aria-label="Desempenho por agente; role para ver todas as colunas em telas pequenas">
+                        <div class="tabela-agentes" role="table" aria-label="Estatísticas por agente">
+                            <div class="linha-agente cabecalho-agentes" role="row">
+                                <span class="nome-agente-dashboard" role="columnheader">AGENTE</span><span class="coluna-win-rate" role="columnheader">WIN RATE</span><span class="partidas-agente" role="columnheader">PARTIDAS</span><span class="kda-agente" role="columnheader">KDA</span>
+                            </div>
+                            <div class="linha-agente" role="row">
+                                <strong class="nome-agente-dashboard" role="cell">Jett</strong>
+                                <div class="coluna-win-rate" role="cell"><div class="trilho-agente"><div class="barra-agente " style="width: 64%;"><strong>64%</strong></div><span class="marcador-cinquenta" aria-hidden="true"></span></div></div>
+                                <span class="partidas-agente" role="cell">38</span><span class="kda-agente" role="cell">1,52</span>
+                            </div>
+                            <div class="linha-agente" role="row">
+                                <strong class="nome-agente-dashboard" role="cell">Reyna</strong>
+                                <div class="coluna-win-rate" role="cell"><div class="trilho-agente"><div class="barra-agente " style="width: 58%;"><strong>58%</strong></div><span class="marcador-cinquenta" aria-hidden="true"></span></div></div>
+                                <span class="partidas-agente" role="cell">30</span><span class="kda-agente" role="cell">1,41</span>
+                            </div>
+                            <div class="linha-agente" role="row">
+                                <strong class="nome-agente-dashboard" role="cell">Sage</strong>
+                                <div class="coluna-win-rate" role="cell"><div class="trilho-agente"><div class="barra-agente " style="width: 55%;"><strong>55%</strong></div><span class="marcador-cinquenta" aria-hidden="true"></span></div></div>
+                                <span class="partidas-agente" role="cell">22</span><span class="kda-agente" role="cell">1,18</span>
+                            </div>
+                            <div class="linha-agente" role="row">
+                                <strong class="nome-agente-dashboard" role="cell">Omen</strong>
+                                <div class="coluna-win-rate" role="cell"><div class="trilho-agente"><div class="barra-agente " style="width: 50%;"><strong>50%</strong></div><span class="marcador-cinquenta" aria-hidden="true"></span></div></div>
+                                <span class="partidas-agente" role="cell">18</span><span class="kda-agente" role="cell">1,22</span>
+                            </div>
+                            <div class="linha-agente" role="row">
+                                <strong class="nome-agente-dashboard" role="cell">Sova</strong>
+                                <div class="coluna-win-rate" role="cell"><div class="trilho-agente"><div class="barra-agente barra-derrota" style="width: 47%;"><strong>47%</strong></div><span class="marcador-cinquenta" aria-hidden="true"></span></div></div>
+                                <span class="partidas-agente" role="cell">12</span><span class="kda-agente" role="cell">1,05</span>
+                            </div>
+                            <div class="linha-agente" role="row">
+                                <strong class="nome-agente-dashboard" role="cell">Killjoy</strong>
+                                <div class="coluna-win-rate" role="cell"><div class="trilho-agente"><div class="barra-agente barra-derrota" style="width: 42%;"><strong>42%</strong></div><span class="marcador-cinquenta" aria-hidden="true"></span></div></div>
+                                <span class="partidas-agente" role="cell">8</span><span class="kda-agente" role="cell">0,96</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+
