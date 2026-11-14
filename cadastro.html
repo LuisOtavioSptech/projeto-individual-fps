@@ -34,30 +34,30 @@
 
                 <div class="campo-formulario">
                     <label for="nome" class="label-formulario">Nome</label>
-                    <input type="text" id="nome" class="input-formulario" placeholder="Seu nome">
+                    <input type="text" id="input_nome" class="input-formulario" placeholder="Seu nome">
                 </div>
 
                 <div class="campo-formulario">
                     <label for="email" class="label-formulario">E-mail</label>
-                    <input type="email" id="email" class="input-formulario" placeholder="exemplo@email.com">
+                    <input type="email" id="input_email" class="input-formulario" placeholder="exemplo@email.com">
                 </div>
 
                 <div class="campo-formulario">
                     <label for="nick" class="label-formulario">Nickname</label>
-                    <input type="text" id="nick" class="input-formulario" placeholder="Seu nick do valorant">
+                    <input type="text" id="input_nick" class="input-formulario" placeholder="Seu nick do valorant">
                 </div>
 
                 <div class="campo-formulario">
                     <label for="senha" class="label-formulario">Senha</label>
-                    <input type="password" id="senha" class="input-formulario" placeholder="Crie uma senha">
+                    <input type="password" id="input_senha" class="input-formulario" placeholder="Crie uma senha">
                 </div>
 
                 <div class="campo-formulario">
                     <label for="confirmar-senha" class="label-formulario">Confirmar senha</label>
-                    <input type="password" id="confirmar-senha" class="input-formulario" placeholder="Repita a senha">
+                    <input type="password" id="input_confirmarSenha" class="input-formulario" placeholder="Repita a senha">
                 </div>
 
-                <button class="botao-formulario">Criar conta</button>
+                <button class="botao-formulario" onclick="validarFormulario()">Criar conta</button>
 
                 <p class="p-rodape-formulario">Já tem conta? <a href="login.html" class="link-formulario">Entrar</a></p>
             </div>
@@ -66,3 +66,64 @@
     </section>
 </body>
 </html>
+
+<script>
+    function validarFormulario() {
+
+        let nome = input_nome.value;
+        let email = input_email.value;
+        let nick = input_nick.value;
+        let senha = input_senha.value;
+        let confirmarSenha = input_confirmarSenha.value;
+
+        if (nome == "") {
+            alert("O nome é obrigatório.");
+            input_nome.focus();
+            return;
+        }
+
+        if (email == "") {
+            alert("O e-mail é obrigatório.");
+            input_email.focus();
+            return;
+        }
+
+        if (!email.includes("@") || !email.includes(".")) {
+            alert("Digite um e-mail válido.");
+            input_email.focus();
+            return;
+        }
+
+        if (nick == "") {
+            alert("O nickname é obrigatório.");
+            input_nick.focus();
+            return;
+        }
+
+        if (senha == "") {
+            alert("A senha é obrigatória.");
+            input_senha.focus();
+            return;
+        }
+
+        if (senha.length < 8) {
+            alert("A senha deve conter pelo menos 8 caracteres.");
+            input_senha.focus();
+            return;
+        }
+
+        if (confirmarSenha == "") {
+            alert("Confirme sua senha.");
+            input_confirmarSenha.focus();
+            return;
+        }
+
+        if (senha != confirmarSenha) {
+            alert("As senhas não coincidem.");
+            input_confirmarSenha.focus();
+            return;
+        }
+
+        alert("Cadastro realizado com sucesso!");
+    }
+</script>
