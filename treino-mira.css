@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #0F1117;
+    color: #EDEFF4;
+    font-family: 'Chakra Petch', Arial, sans-serif;
+}
+
+.container-principal {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.cabecalho {
+    padding: 24px 0;
+    border-bottom: 1px solid #2A2F3C;
+}
+
+.cabecalho a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cabecalho span, .subtitulo {
+    color: #FF4655;
+}
+
+.section-treino {
+    padding: 36px 0;
+}
+
+.subtitulo {
+    font-size: .8rem;
+    letter-spacing: .12em;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    margin: 12px 0;
+}
+
+.descricao, .estatistica, .controles p {
+    color: #9AA3B5;
+}
+
+.descricao {
+    line-height: 1.6;
+}
+
+.painel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0 16px;
+}
+
+.estatistica {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 1 120px;
+    padding: 16px;
+    border: 1px solid #2A2F3C;
+    border-radius: 8px;
+    background: #161A23;
+}
+
+.estatistica strong {
+    color: #EDEFF4;
+    font-size: 1.6rem;
+}
+
+.area-jogo {
+    position: relative;
+    height: clamp(280px, 48vh, 440px);
+    border: 1px solid #2A2F3C;
+    border-radius: 12px;
+    background: radial-gradient(ellipse at center, #1e2534, #12161f);
+    cursor: crosshair;
+    overflow: clip;
+    touch-action: manipulation;
+}
+
+.cenario {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background: #10141c;
+}
+
+.parede-fundo {
+    position: absolute;
+    inset: 9% 15% 30%;
+    border: 1px solid #39414d;
+    background: linear-gradient(180deg, #303946, #1b222d);
+    box-shadow: inset 0 3px #ff465580, 0 -5px 30px #ff46551a;
+}
+
+.placa-treino {
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    text-align: center;
+    font-size: clamp(.55rem, 1.4vw, .8rem);
+    letter-spacing: .16em;
+    color: #a3adbb;
+}
+
+.paineis-parede {
+    position: absolute;
+    inset: 35% 8% 12%;
+    display: flex;
+    gap: 8%;
+}
+
+.paineis-parede span {
+    flex: 1;
+    border: 1px solid #414b59;
+    background: linear-gradient(90deg, #151c26, #242d39);
+    box-shadow: inset 0 4px #48515e;
+}
+
+.parede-lateral {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 15%;
+    background: repeating-linear-gradient(0deg, transparent 0 65px, #ffffff08 66px 67px), linear-gradient(90deg, #141922, #303845);
+}
+
+.parede-esquerda {
+    left: 0;
+    clip-path: polygon(0 0, 100% 9%, 100% 70%, 0 100%);
+}
+
+.parede-direita {
+    right: 0;
+    transform: scaleX(-1);
+    clip-path: polygon(0 0, 100% 9%, 100% 70%, 0 100%);
+}
+
+.chao {
+    position: absolute;
+    top: 70%;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    transform-origin: center top;
+    transform: perspective(220px) rotateX(55deg);
+    background: repeating-linear-gradient(90deg, transparent 0 calc(12.5% - 1px), #64708435 calc(12.5% - 1px) 12.5%), repeating-linear-gradient(0deg, #1a202a 0 39px, #39414d 40px 41px);
+    border-top: 2px solid #6a424b;
+}
+
+.caixa {
+    position: absolute;
+    bottom: 12%;
+    width: 12%;
+    height: 20%;
+    border: 2px solid #4c5664;
+    background: linear-gradient(135deg, transparent 46%, #4c5664 47% 50%, transparent 51%), linear-gradient(45deg, #222a36, #35404e);
+    box-shadow: 8px 10px 12px #0005, inset 0 5px #ffffff0a;
+}
+
+.caixa-esquerda {
+    left: 6%;
+}
+
+.caixa-direita {
+    right: 7%;
+    bottom: 19%;
+    width: 9%;
+    height: 16%;
+}
+
+.aviso {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 24px;
+    text-align: center;
+    color: #EDEFF4;
+    background: #0f111780;
+    text-shadow: 0 2px 4px #000;
+    pointer-events: none;
+}
+
+.alvo {
+    position: absolute;
+    z-index: 2;
+    width: 52px;
+    height: 52px;
+    padding: 0;
+    border: 8px solid #FF4655;
+    border-radius: 50%;
+    background: #EDEFF4;
+    box-shadow: 0 0 0 3px #0f1117, 0 0 24px #ff465540;
+    cursor: crosshair;
+    touch-action: manipulation;
+}
+
+.alvo::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border-radius: 50%;
+    background: #FF4655;
+}
+
+[hidden] {
+    display: none;
+}
+
+.controles {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.controles p {
+    flex: 1 1 220px;
+    line-height: 1.5;
+}
+
+.botao-iniciar {
+    padding: 14px 24px;
+    border: 0;
+    border-radius: 8px;
+    background: #FF4655;
+    color: #0F1117;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botao-iniciar:disabled {
+    opacity: .5;
+    cursor: default;
+}
+
+button:focus-visible, a:focus-visible {
+    outline: 3px solid #EDEFF4;
+    outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+    .container-principal {
+        padding: 0 16px;
+    }
+
+    .estatistica {
+        flex-basis: 40%;
+        padding: 12px;
+    }
+
+}
