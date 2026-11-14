@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treino de mira | FPS</title>
+    <link rel="stylesheet" href="treino-mira.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container-principal"><a href="index.html">FPS <span>/</span> MINHA HISTÓRIA</a></div>
+    </header>
+    <main>
+        <section class="section-treino">
+            <div class="container-principal">
+                <p class="subtitulo">MINIGAME · TREINO DE MIRA</p>
+                <h1>Coloque sua mira à prova.</h1>
+                <p class="descricao">Acerte o máximo de alvos em 30 segundos. Clicar fora do alvo conta como erro.</p>
+                <div class="painel">
+                    <div class="estatistica">Tempo <strong id="tempo">30s</strong></div>
+                    <div class="estatistica">Acertos <strong id="acertos">0</strong></div>
+                    <div class="estatistica">Erros <strong id="erros">0</strong></div>
+                    <div class="estatistica">Precisão <strong id="precisao">0%</strong></div>
+                </div>
+                <div class="area-jogo" id="area-jogo" aria-label="Área do treino de mira">
+                    <div class="cenario" aria-hidden="true">
+                        <div class="parede-fundo">
+                            <span class="placa-treino">SETOR 01 / TREINAMENTO</span>
+                            <div class="paineis-parede"><span></span><span></span><span></span></div>
+                        </div>
+                        <div class="parede-lateral parede-esquerda"></div>
+                        <div class="parede-lateral parede-direita"></div>
+                        <div class="chao"></div>
+                        <div class="caixa caixa-esquerda"></div>
+                        <div class="caixa caixa-direita"></div>
+                    </div>
+                    <p class="aviso" id="aviso">Pronto para treinar? Clique em iniciar.</p>
+                    <button class="alvo" id="alvo" aria-label="Acertar alvo" hidden></button>
+                </div>
+                <div class="controles">
+                    <button class="botao-iniciar" id="iniciar">Iniciar treino</button>
+                    <p id="mensagem" role="status">Use o mouse ou toque no alvo para jogar.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        const area = document.getElementById('area-jogo');
+        const alvo = document.getElementById('alvo');
+        const botaoIniciar = document.getElementById('iniciar');
+        const aviso = document.getElementById('aviso');
+        const mensagem = document.getElementById('mensagem');
+        const textoTempo = document.getElementById('tempo');
+        const textoAcertos = document.getElementById('acertos');
+        const textoErros = document.getElementById('erros');
+        const textoPrecisao = document.getElementById('precisao');
+
+        let acertos = 0;
+        let erros = 0;
+        let jogando = false;
+        let fimDaPartida = 0;
+        let cronometro;
+
+        function atualizarPlacar() {
+            const total = acertos + erros;
+            const precisao = total > 0 ? Math.round(acertos / total * 100) : 0;
+            textoAcertos.textContent = acertos;
+            textoErros.textContent = erros;
+            textoPrecisao.textContent = precisao + '%';
+        }
+
+        function moverAlvo() {
+            const margem = 12;
+            const limiteX = Math.max(0, area.clientWidth - alvo.offsetWidth - margem * 2);
+            const limiteY = Math.max(0, area.clientHeight - alvo.offsetHeight - margem * 2);
+            alvo.style.left = margem + Math.random() * limiteX + 'px';
+            alvo.style.top = margem + Math.random() * limiteY + 'px';
+        }
+
+        function encerrarPartida() {
+            jogando = false;
+            clearInterval(cronometro);
+            alvo.hidden = true;
+            aviso.hidden = false;
+            aviso.textContent = 'Tempo esgotado! Que tal mais uma rodada?';
+            textoTempo.textContent = '0s';
+            botaoIniciar.disabled = false;
+            botaoIniciar.textContent = 'Jogar novamente';
+            mensagem.textContent = 'Você fez ' + acertos + ' acertos e ' + erros + ' erros, com ' + textoPrecisao.textContent + ' de precisão.';
+        }
+
+        function atualizarTempo() {
+            const restante = Math.max(0, Math.ceil((fimDaPartida - Date.now()) / 1000));
+            textoTempo.textContent = restante + 's';
+            if (restante === 0) encerrarPartida();
+        }
+
+        botaoIniciar.addEventListener('click', function () {
+            if (jogando) return;
+            acertos = 0;
+            erros = 0;
+            jogando = true;
+            fimDaPartida = Date.now() + 30000;
+            atualizarPlacar();
+            textoTempo.textContent = '30s';
+            aviso.hidden = true;
+            alvo.hidden = false;
+            botaoIniciar.disabled = true;
+            mensagem.textContent = 'Treino em andamento. Acerte os alvos!';
+            moverAlvo();
+            cronometro = setInterval(atualizarTempo, 100);
+        });
+
+        area.addEventListener('click', function (evento) {
+            if (!jogando) return;
+            if (Date.now() >= fimDaPartida) {
+                encerrarPartida();
+                return;
+            }
+            if (alvo.contains(evento.target)) {
+                acertos++;
+                moverAlvo();
+            } else {
+                erros++;
+            }
+            atualizarPlacar();
+        });
+
+        window.addEventListener('resize', function () {
+            if (jogando) moverAlvo();
+        });
+    </script>
+</body>
+</html>
