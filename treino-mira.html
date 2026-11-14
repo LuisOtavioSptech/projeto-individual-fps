@@ -70,11 +70,18 @@
         }
 
         function moverAlvo() {
-            const margem = 12;
-            const limiteX = Math.max(0, area.clientWidth - alvo.offsetWidth - margem * 2);
-            const limiteY = Math.max(0, area.clientHeight - alvo.offsetHeight - margem * 2);
-            alvo.style.left = margem + Math.random() * limiteX + 'px';
-            alvo.style.top = margem + Math.random() * limiteY + 'px';
+            var tamanhoAlvo = 52;
+            var margemLateral = area.clientWidth * 0.18;
+            var margemTopo = area.clientHeight * 0.12;
+            var margemBaixo = area.clientHeight * 0.35;
+
+            var minX = margemLateral;
+            var maxX = area.clientWidth - tamanhoAlvo - margemLateral;
+            var minY = margemTopo;
+            var maxY = area.clientHeight - tamanhoAlvo - margemBaixo;
+
+            alvo.style.left = minX + Math.random() * (maxX - minX) + 'px';
+            alvo.style.top = minY + Math.random() * (maxY - minY) + 'px';
         }
 
         function encerrarPartida() {
