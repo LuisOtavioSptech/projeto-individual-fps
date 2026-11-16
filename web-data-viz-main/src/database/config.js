@@ -6,7 +6,7 @@ var mySqlConfig = {
     database: process.env.DB_DATABASE,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    port: 3307
+    port: 3306
 };
 
 function executar(instrucao) {
