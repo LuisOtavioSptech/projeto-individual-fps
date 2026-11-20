@@ -1,8 +1,6 @@
 CREATE DATABASE valorantStats;
 USE valorantStats;
 
-select * from usuario;
-
 CREATE TABLE usuario (
     idUsuario INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(60) NOT NULL,
@@ -10,6 +8,8 @@ CREATE TABLE usuario (
     senha VARCHAR(50) NOT NULL,
     dtCadastro DATETIME DEFAULT CURRENT_TIMESTAMP
 );
+
+insert into usuario(nome, email, senha) VALUES ('Luis', 'luis@gmail.com', 'senha123');
 
 -- 1:1 com usuario
 CREATE TABLE perfilJogador (
