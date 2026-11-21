@@ -34,6 +34,59 @@
                         <h1>Seu desempenho no <span class="texto-vermelho">Valorant</span></h1>
                         <p class="descricao-dashboard">Estatísticas das partidas registradas na sua conta.</p>
                     </div>
+                    <button class="botao-formulario" id="btn_toggle_partida" onclick="formularioPartida()" style="width: auto; margin-top: 0; padding: 12px 22px;">+ Registrar partida</button>
+                </div>
+
+                <div class="painel-dashboard" id="card_registrar_partida" style="display: none; padding: 24px; margin-bottom: 24px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                        <h2 style="margin: 0; font-size: 20px;">Registrar Nova Partida</h2>
+                        <span style="font-size: 13px; color: #9AA3B5;">Preencha os dados da partida</span>
+                    </div>
+
+                    <div style="display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end;">
+                        <div class="campo-formulario" style="flex: 1 1 140px; margin-bottom: 0;">
+                            <label for="select_resultado" class="label-formulario">Resultado</label>
+                            <select id="select_resultado" class="input-formulario" style="cursor: pointer;">
+                                <option value="" disabled selected>Selecione</option>
+                                <option value="vitoria">Vitória</option>
+                                <option value="derrota">Derrota</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-formulario" style="flex: 1 1 160px; margin-bottom: 0;">
+                            <label for="select_mapa" class="label-formulario">Mapa</label>
+                            <select id="select_mapa" class="input-formulario" style="cursor: pointer;">
+                                <option value="" disabled selected>Carregando mapas...</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-formulario" style="flex: 1 1 160px; margin-bottom: 0;">
+                            <label for="select_agente" class="label-formulario">Agente</label>
+                            <select id="select_agente" class="input-formulario" style="cursor: pointer;">
+                                <option value="" disabled selected>Carregando agentes...</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-formulario" style="flex: 1 1 100px; margin-bottom: 0;">
+                            <label for="input_kills" class="label-formulario">Abates (K)</label>
+                            <input type="number" id="input_kills" min="0" class="input-formulario" placeholder="0">
+                        </div>
+
+                        <div class="campo-formulario" style="flex: 1 1 100px; margin-bottom: 0;">
+                            <label for="input_deaths" class="label-formulario">Mortes (D)</label>
+                            <input type="number" id="input_deaths" min="0" class="input-formulario" placeholder="0">
+                        </div>
+
+                        <div class="campo-formulario" style="flex: 1 1 100px; margin-bottom: 0;">
+                            <label for="input_assists" class="label-formulario">Assistências (A)</label>
+                            <input type="number" id="input_assists" min="0" class="input-formulario" placeholder="0">
+                        </div>
+
+                        <div style="display: flex; gap: 8px;">
+                            <button class="botao-formulario" onclick="cadastrarPartida()" style="width: auto; margin-top: 0; padding: 12px 22px;">Salvar</button>
+                            <button class="botao-formulario" onclick="formularioPartida()" style="width: auto; margin-top: 0; background-color: #2A2F3C; color: #EDEFF4; padding: 12px 16px;">Cancelar</button>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="resumo-dashboard">
@@ -98,7 +151,135 @@
         } else {
             avatar_usuario.innerHTML = nomeUsuario.substring(0, 2).toUpperCase();
             nome_usuario_nav.innerHTML = nomeUsuario;
+            carregarMapas();
+            carregarAgentes();
             buscarDados();
+        }
+
+        function formularioPartida() {
+            let form = card_registrar_partida;
+            if (form.style.display == "none") {
+                form.style.display = "block";
+                btn_toggle_partida.innerHTML = "Fechar formulário";
+            } else {
+                form.style.display = "none";
+                btn_toggle_partida.innerHTML = "+ Registrar partida";
+            }
+        }
+
+        function carregarMapas() {
+            fetch("/partidas/mapas").then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then(function (mapas) {
+                        let html = '<option value="" disabled selected>Selecione o mapa</option>';
+                        for (let i = 0; i < mapas.length; i++) {
+                            html += '<option value="' + mapas[i].idMapa + '">' + mapas[i].nome + '</option>';
+                        }
+                        select_mapa.innerHTML = html;
+                    });
+                }
+            }).catch(function (erro) {
+                console.log("Erro ao carregar mapas: ", erro);
+            });
+        }
+
+        function carregarAgentes() {
+            fetch("/partidas/agentes").then(function (resposta) {
+                if (resposta.ok) {
+                    resposta.json().then(function (agentes) {
+                        let html = '<option value="" disabled selected>Selecione o agente</option>';
+                        for (let i = 0; i < agentes.length; i++) {
+                            html += '<option value="' + agentes[i].idAgente + '">' + agentes[i].nome + ' (' + agentes[i].funcao + ')</option>';
+                        }
+                        select_agente.innerHTML = html;
+                    });
+                }
+            }).catch(function (erro) {
+                console.log("Erro ao carregar agentes: ", erro);
+            });
+        }
+
+        function cadastrarPartida() {
+            let resultado = select_resultado.value;
+            let fkMapa = select_mapa.value;
+            let fkAgente = select_agente.value;
+            let kills = input_kills.value;
+            let deaths = input_deaths.value;
+            let assists = input_assists.value;
+
+            if (resultado == "") {
+                alert("Selecione o resultado da partida (Vitória ou Derrota).");
+                select_resultado.focus();
+                return;
+            }
+
+            if (fkMapa == "") {
+                alert("Selecione o mapa da partida.");
+                select_mapa.focus();
+                return;
+            }
+
+            if (fkAgente == "") {
+                alert("Selecione o agente utilizado.");
+                select_agente.focus();
+                return;
+            }
+
+            if (kills === "" || Number(kills) < 0) {
+                alert("Informe uma quantidade válida de abates (Kills).");
+                input_kills.focus();
+                return;
+            }
+
+            if (deaths === "" || Number(deaths) < 0) {
+                alert("Informe uma quantidade válida de mortes (Deaths).");
+                input_deaths.focus();
+                return;
+            }
+
+            if (assists === "" || Number(assists) < 0) {
+                alert("Informe uma quantidade válida de assistências.");
+                input_assists.focus();
+                return;
+            }
+
+            fetch("/partidas/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    idUsuarioServer: idUsuario,
+                    fkMapaServer: fkMapa,
+                    fkAgenteServer: fkAgente,
+                    resultadoServer: resultado,
+                    killsServer: Number(kills),
+                    deathsServer: Number(deaths),
+                    assistsServer: Number(assists)
+                })
+            }).then(function (resposta) {
+                if (resposta.ok) {
+                    alert("Partida registrada com sucesso!");
+
+                    select_resultado.value = "";
+                    select_mapa.value = "";
+                    select_agente.value = "";
+                    input_kills.value = "";
+                    input_deaths.value = "";
+                    input_assists.value = "";
+                    formularioPartida();
+
+                    // Atualiza a dashboard instantaneamente com os novos números
+                    buscarDados();
+                } else {
+                    resposta.text().then(function (texto) {
+                        alert("Houve um erro ao registrar a partida: " + texto);
+                    });
+                }
+            }).catch(function (erro) {
+                console.log(erro);
+                alert("Erro de conexão ao registrar partida.");
+            });
         }
 
         function buscarDados() {

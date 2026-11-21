@@ -1,4 +1,4 @@
-﻿.pagina-dashboard {
+.pagina-dashboard {
     color: #EDEFF4;
 }
 
@@ -390,4 +390,9 @@
     .linha-agente {
         gap: 12px;
     }
+}
+
+select.input-formulario option {
+    background-color: #12151D;
+    color: #EDEFF4;
 }

@@ -62,9 +62,34 @@ function buscarDesempenhoPorAgente(idUsuario) {
     return database.executar(instrucaoSql);
 }
 
+function listarMapas() {
+    let instrucaoSql = `
+        SELECT idMapa, nome FROM mapa ORDER BY nome;
+    `;
+    return database.executar(instrucaoSql);
+}
+
+function listarAgentes() {
+    let instrucaoSql = `
+        SELECT idAgente, nome, funcao FROM agente ORDER BY nome;
+    `;
+    return database.executar(instrucaoSql);
+}
+
+function cadastrar(idUsuario, fkMapa, fkAgente, resultado, kills, deaths, assists) {
+    let instrucaoSql = `
+        INSERT INTO partida (dtPartida, resultado, kills, deaths, assists, fkUsuario, fkMapa, fkAgente)
+        VALUES (NOW(), '${resultado}', ${kills}, ${deaths}, ${assists}, ${idUsuario}, ${fkMapa}, ${fkAgente});
+    `;
+    return database.executar(instrucaoSql);
+}
+
 module.exports = {
     buscarResumo,
     buscarAgenteMaisJogado,
     buscarWinRatePorMapa,
-    buscarDesempenhoPorAgente
+    buscarDesempenhoPorAgente,
+    listarMapas,
+    listarAgentes,
+    cadastrar
 };
