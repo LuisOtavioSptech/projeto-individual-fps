@@ -91,8 +91,16 @@
 
                 <div class="resumo-dashboard">
                     <div class="card-resumo"><p class="rotulo-dashboard">PARTIDAS JOGADAS</p><p class="numero-dashboard" id="total_partidas">-</p></div>
-                    <div class="card-resumo"><p class="rotulo-dashboard">WIN RATE GERAL</p><p class="numero-dashboard texto-verde" id="win_rate">-</p></div>
-                    <div class="card-resumo"><p class="rotulo-dashboard">KDA MÉDIO</p><p class="numero-dashboard" id="kda_medio">-</p></div>
+                    <div class="card-resumo">
+                        <p class="rotulo-dashboard">WIN RATE GERAL</p>
+                        <p class="numero-dashboard texto-verde" id="win_rate">-</p>
+                        <p class="descricao-grafico explicacao-metrica">(Vitórias ÷ total de partidas) × 100</p>
+                    </div>
+                    <div class="card-resumo">
+                        <p class="rotulo-dashboard">KDA MÉDIO</p>
+                        <p class="numero-dashboard" id="kda_medio">-</p>
+                        <p class="descricao-grafico explicacao-metrica">Média de (abates + assistências) ÷ mortes por partida.</p>
+                    </div>
                     <div class="card-resumo"><p class="rotulo-dashboard">AGENTE MAIS JOGADO</p><p class="numero-dashboard texto-vermelho" id="agente_mais_jogado">-</p></div>
                 </div>
 
@@ -117,6 +125,10 @@
                                     <p><span class="cor-legenda cor-derrota"></span><span id="texto_derrotas">-</span></p>
                                 </div>
                             </div>
+                            <p class="descricao-grafico explicacao-metrica">
+                                Vitória (%) = (vitórias ÷ total de partidas) × 100<br>
+                                Derrota (%) = (derrotas ÷ total de partidas) × 100
+                            </p>
                         </div>
                         <div class="destaques-mapas">
                             <div class="card-resumo"><p class="rotulo-dashboard">MELHOR MAPA</p><h3 class="texto-verde" id="melhor_mapa">-</h3><p class="descricao-grafico" id="melhor_mapa_wr">-</p></div>
@@ -127,7 +139,7 @@
 
                 <div class="painel-dashboard painel-agentes">
                     <h2>Desempenho por agente</h2>
-                    <p class="descricao-grafico">Ordenado por win rate. Marcador branco indica 50%. KDA: (abates + assistências) / mortes.</p>
+                    <p class="descricao-grafico">Ordenado por win rate. Marcador branco indica 50%.</p>
                     <div class="rolagem-agentes" tabindex="0">
                         <div class="tabela-agentes" role="table">
                             <div class="linha-agente cabecalho-agentes" role="row">

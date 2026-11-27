@@ -138,6 +138,10 @@
     margin: 0;
 }
 
+.descricao-grafico.explicacao-metrica {
+    margin-top: 8px;
+}
+
 .painel-mapas {
     flex: 2 1 580px;
 }
@@ -147,7 +151,6 @@
     overflow-x: auto;
 }
 
-/* A área das barras representa 100%. A linha fica na metade dela. */
 .grafico-mapas {
     display: flex;
     position: relative;
@@ -216,7 +219,6 @@
     margin-top: 22px;
 }
 
-/* O gradiente divide o círculo entre vitórias e derrotas. */
 .grafico-rosca {
     display: flex;
     align-items: center;
